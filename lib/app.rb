@@ -1,6 +1,18 @@
-require "sinatra"
+require "Sinatra"
+require "sinatra/flash"
+require "mongoid"
+
+require_relative "models/issue"
+
 class App < Sinatra::Base
+	enable :sessions
+	register Sinatra::Flash
 	get "/" do 
-		"Hello"	
+		redirect "/issues"
+	end
+
+	get "/issues" do 
+		# @issues = Issue.all
+		haml :"issues/index"
 	end
 end

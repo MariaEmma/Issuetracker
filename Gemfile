@@ -9,6 +9,7 @@ gem "shotgun"
 gem "pry"
 gem "sinatra-flash"
 gem "sinatra-partial"
+gem 'sinatra-redirect-with-flash'
 
 group :test do
 	gem "minitest", require: "minitest/autorun"
