@@ -12,7 +12,19 @@ class App < Sinatra::Base
 	end
 
 	get "/issues" do 
-		# @issues = Issue.all
+		@issues = Issue.all
 		haml :"issues/index"
+	end
+
+	get "/issues/new" do 
+		@issues = Issue.all
+		haml :"issues/new"
+	end
+
+	post "/issues" do 
+		@issues = Issue.new params[:issue]
+		if @issue.save
+			redirect "/"
+		end
 	end
 end
