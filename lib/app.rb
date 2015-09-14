@@ -2,6 +2,7 @@ require "Sinatra"
 require "sinatra/flash"
 require "mongoid"
 
+
 require_relative "models/issue"
 
 class App < Sinatra::Base
